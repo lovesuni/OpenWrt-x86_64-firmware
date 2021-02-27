@@ -11,12 +11,12 @@
 #
 
 # 移除ACwifidude自带bin目录
-rm -rf bin
+#rm -rf bin
 
 # 并入 lean插件包feeds和firewall
-git clone https://github.com/coolsnowwolf/lede
-cp -r lede/package/lean package/
-\cp lede/feeds.conf.default feeds.conf.default
+#git clone https://github.com/coolsnowwolf/lede
+#cp -r lede/package/lean package/
+#\cp lede/feeds.conf.default feeds.conf.default
 
 
 # Uncomment a feed source
@@ -24,33 +24,33 @@ cp -r lede/package/lean package/
 
 # Add a feed source
 #sed -i '$a src-git lienol https://github.com/Lienol/openwrt-package' feeds.conf.default
-sed -i '$a src-git kenzok8 https://github.com/kenzok8/openwrt-packages' feeds.conf.default
-sed -i '$a src-git small https://github.com/kenzok8/small' feeds.conf.default
-sed -i '$a src-git OpenAppFilter https://github.com/OpenWrt-Actions/OpenAppFilter' feeds.conf.default
+#sed -i '$a src-git kenzok8 https://github.com/kenzok8/openwrt-packages' feeds.conf.default
+#sed -i '$a src-git small https://github.com/kenzok8/small' feeds.conf.default
+#sed -i '$a src-git OpenAppFilter https://github.com/OpenWrt-Actions/OpenAppFilter' feeds.conf.default
 # git clone https://github.com/kenzok8/openwrt-packages.git package/openwrt-packages
 
 
 # 添加UPX UCL工具包
-cp -r lede/tools/upx tools
-cp -r lede/tools/ucl tools
+#cp -r lede/tools/upx tools
+#cp -r lede/tools/ucl tools
 
 
 # 修改makefile
-sed  -i '/^# builddir dependencies/i\tools-y += ucl upx' ./tools/Makefile
-sed  -i '/^# builddir dependencies/a\$(curdir)/upx/compile := $(curdir)/ucl/compile' ./tools/Makefile
+#sed  -i '/^# builddir dependencies/i\tools-y += ucl upx' ./tools/Makefile
+#sed  -i '/^# builddir dependencies/a\$(curdir)/upx/compile := $(curdir)/ucl/compile' ./tools/Makefile
 
 
 # 删除重复插件
-rm -rf package/lean/ipt2socks
-rm -rf package/lean/dns2socks
-rm -rf package/lean/pdnsd-alt
-rm -rf package/lean/shadowsocksr-libev
-rm -rf package/lean/simple-obfs
-rm -rf package/lean/v2ray-plugin
-rm -rf package/lean/v2ray
-rm -rf package/lean/microsocks
+#rm -rf package/lean/ipt2socks
+#rm -rf package/lean/dns2socks
+#rm -rf package/lean/pdnsd-alt
+#rm -rf package/lean/shadowsocksr-libev
+#rm -rf package/lean/simple-obfs
+#rm -rf package/lean/v2ray-plugin
+#rm -rf package/lean/v2ray
+#rm -rf package/lean/microsocks
 
 
 
 # 删除lede文件夹
-rm -rf lede
+#rm -rf lede
